@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --color-paper: #f3f5f7;
+  --color-surface: #ffffff;
+  --color-ink: #172033;
+  --color-muted: #586275;
+  --color-line: #d9dee6;
+  --color-line-soft: #e8ebf0;
+
+  /* The network route: Gulf teal. */
+  --color-route: #0e6f6e;
+  --color-route-soft: #e2f1f0;
+  /* The tax authority branch: sand. */
+  --color-sand: #9a7432;
+  --color-sand-soft: #f6eedd;
+
+  --color-good: #23743b;
+  --color-good-soft: #e6f3e9;
+  --color-warn: #965a06;
+  --color-warn-soft: #fbf0dc;
+  --color-bad: #b42318;
+  --color-bad-soft: #fdecea;
+}
+
+@layer base {
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-route);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+}
+
+/* The one piece of ambient motion: the station currently being processed. */
+@keyframes station-pulse {
+  0% { box-shadow: 0 0 0 0 rgb(14 111 110 / 0.45); }
+  100% { box-shadow: 0 0 0 10px rgb(14 111 110 / 0); }
+}
+.station-active {
+  animation: station-pulse 1.1s ease-out infinite;
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: none; }
+}
+.event-new {
+  animation: reveal 280ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .station-active,
+  .event-new {
+    animation: none;
+  }
+}
+
+@layer base {
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  color: inherit;
+}
+}
