@@ -6,7 +6,7 @@ const ROWS: { part: string; here: string; real: boolean; production: string }[] 
   { part: 'Status rules and the event log', here: 'Built and working', real: true, production: 'Same, driven by partner webhooks' },
   { part: 'Payment matching (cash application)', here: 'Matching logic built; the incoming payment is simulated', real: true, production: 'Fed by the bank partner’s payment notifications' },
   { part: 'Database', here: 'Built, stored in your browser so each reviewer has their own copy', real: true, production: 'Volopay’s own database' },
-  { part: 'Check 2 and delivery: the ASP', here: 'Simulated', real: false, production: 'Storecove API: PINT AE validation, Peppol delivery, status callbacks' },
+  { part: 'Check 2 and delivery: the ASP', here: 'Simulated', real: false, production: 'ClearTax (UAE accredited ASP) API: PINT AE validation, Peppol delivery, status callbacks' },
   { part: 'Corners 3 and 4: buyer’s ASP and buyer', here: 'Simulated', real: false, production: 'The live UAE Peppol network' },
   { part: 'Corner 5: tax data copy to the FTA', here: 'Simulated status only', real: false, production: 'Reported by the ASP' },
   { part: 'Network directory lookup', here: 'Simulated with sample entries', real: false, production: 'Peppol directory lookup through the ASP' },

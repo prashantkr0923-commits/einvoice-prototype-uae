@@ -56,7 +56,7 @@ export default function Route({ p }: { p: Progress }) {
         <ol className="mt-4 flex flex-col md:flex-row md:items-start">
           <Station title="Your company" sub="Corner 1, Volopay checks" state={p.volopay} simulated={false} />
           <Link on={reached(p.asp)} failed={p.asp === 'failed'} />
-          <Station title="Your ASP" sub="Corner 2, Storecove" state={p.asp} simulated />
+          <Station title="Your ASP" sub="Corner 2, ClearTax" state={p.asp} simulated />
           <Link on={reached(p.buyerAsp)} />
           <Station title="Buyer’s ASP" sub="Corner 3" state={p.buyerAsp} simulated />
           <Link on={reached(p.buyer)} />

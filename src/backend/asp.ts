@@ -1,13 +1,13 @@
 // SIMULATED: the Accredited Service Provider (ASP) integration.
 // In production this module is Volopay's "network adapter": it would call the
-// partner ASP's API (Storecove in the strategy), which validates the invoice
+// partner ASP's API (ClearTax in the strategy, an accredited UAE ASP), which validates the invoice
 // against PINT AE rules (check 2), delivers it to the buyer's ASP over Peppol,
 // reports the tax data document to the FTA, and returns statuses by webhook.
 // Here every response is generated locally from sample data.
 import { DIRECTORY } from './seed';
 import type { Invoice, Rejection } from './types';
 
-export const SIMULATED_ASP_NAME = 'Storecove (simulated)';
+export const SIMULATED_ASP_NAME = 'ClearTax (simulated)';
 
 const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
